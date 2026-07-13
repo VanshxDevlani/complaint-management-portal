@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Management Portal</title>
+
+   <link rel = "stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+         <span class="menu-btn" onclick="openMenu()">☰</span>
+
+        <div class="title"><h1>Digital Complaint Portal</h1></div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+
+    <span class="close-btn" onclick="closeMenu()">❌</span>
+
+    <a href="home.html">🏠 Home</a>
+    <a href="filecomplain.html">📝 File Complaint</a>
+    <a href="trackcomplain.html">🔍 Track Complaint</a>
+    <a href="complainpolicy.html">📋 Complaint Policy</a>
+    <a href="feedback.html">💬 Feedback</a>
+    <a href="contact.html">📞 Contact Us</a>
+    <a href="officer.html">🔐 Officer Login</a>
+
+</div>
+
+    <!-- Main Section -->
+    <div class="container">
+
+        <div class="subheading">
+            <h4>An Autonomous Complaint Portal for your nearby complaints</h4>
+            <p>herein you can Submit and Track Your Complaints Easily</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>File a Complaint</h3>
+                <p>Register a new complaint</p>
+                <a href="filecomplain.html">
+                  <button>open</button>  
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Track Complaint</h3>
+                <p>Check complaint status.</p>
+                <a href="trackcomplain.html">
+                  <button>track</button>  
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Complaint Policy</h3>
+                <p>Read complaint handling rules.</p>
+                <a href ="complainpolicy.html"> <button>View</button> </a>
+            </div>
+
+            <div class="card">
+                <h3>Feedback</h3>
+                <p>Your Feedback is valuable to us</p>
+               <a href = "feedback.html"> <button>give feedback</button> </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-box">
+                <h4>Contact Us</h4>
+                <p>1800-123-456</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>Feedback</h4>
+                <p>Give your valuable feedback</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>FAQs</h4>
+                <p>Frequently Asked Questions</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>Hosted & Maintained</h4>
+                <p>Government Authorities</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Complaint Management Portal
+        </div>
+
+    </footer>
+
+    <script>
+function openMenu(){
+    document.getElementById("sidebar").style.width = "260px";
+}
+function closeMenu(){
+    document.getElementById("sidebar").style.width = "0";
+}
+</script>
+
+</body>
+</html>
