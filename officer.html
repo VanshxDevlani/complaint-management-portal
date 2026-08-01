@@ -1,11 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Officer Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#f4f7fc;
+
+}
+
+/* HERO */
+
+.hero{
+
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url("images/title.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+height:220px;
+
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;
+
+}
+
+header{
+
+height:100%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+}
+
+.menu-btn{
+
+position:absolute;
+
+left:30px;
+top:30px;
+
+font-size:38px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.hero-content{
+
+text-align:center;
+color:white;
+
+}
+
+.hero-content h1{
+
+font-size:38px;
+margin-bottom:10px;
+
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+height:100%;
+
+width:0;
+
+position:fixed;
+
+left:0;
+top:0;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("images/title.jpg");
+
+background-size:cover;
+background-position:center;
+
+overflow-x:hidden;
+
+transition:.4s;
+
+padding-top:70px;
+
+z-index:999;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:18px 30px;
+
+font-size:20px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:rgba(255,255,255,.15);
+
+padding-left:40px;
+
+}
+
+.close-btn{
+
+position:absolute;
+
+top:15px;
+right:25px;
+
+font-size:35px;
+
+}
+
+/* LOGIN CARD */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+margin:50px auto;
+
+}
+
+.login-card{
+
+background:white;
+
+width:420px;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.login-card h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+color:#2c3e50;
+
+}
+
+.input-group{
+
+margin-bottom:20px;
+
+}
+
+label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:500;
+
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+.password-box{
+
+position:relative;
+
+}
+
+.password-box span{
+
+position:absolute;
+
+right:15px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+font-size:14px;
+
+color:royalblue;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+button{
+
+flex:1;
+
+padding:12px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.login-btn{
+
+background:royalblue;
+
+color:white;
+
+}
+
+.login-btn:hover{
+
+background:#204bcf;
+
+}
+
+.clear-btn{
+
+background:#ddd;
+
+}
+
+.clear-btn:hover{
+
+background:#bbb;
+
+}
+
+#error{
+
+margin-top:15px;
+
+text-align:center;
+
+color:red;
+
+font-weight:500;
+
+display:none;
+
+}
+
+/* FOOTER */
+
+footer{
+
+margin-top:50px;
+
+background:#1e293b;
+
+color:white;
+
+text-align:center;
+
+padding:18px;
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <p>only for authorized persons :</p>
+
+<div class="hero">
+
+<header>
+
+<span class="menu-btn" onclick="openMenu()">☰</span>
+
+<div class="hero-content">
+
+<h1>Officer Login</h1>
+
+<p>Authorized Officers Only</p>
+
+</div>
+
+</header>
+
+</div>
+
+<div class="sidebar" id="sidebar">
+
+<a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">×</a>
+
+<a href="home.html">🏠 Home</a>
+
+<a href="filecomplain.html">📝 File Complaint</a>
+
+<a href="trackcomplain.html">📍 Track Complaint</a>
+
+<a href="complaintpolicy.html">📖 Complaint Policy</a>
+
+<a href="feedback.html">⭐ Feedback</a>
+
+<a href="contact.html">☎ Contact</a>
+
+<a href="officer.html">👤 Officer Login</a>
+
+</div>
+
+<div class="container">
+
+<div class="login-card">
+
+<h2>Officer Login</h2>
+
+<div class="input-group">
+
+<label>Officer ID</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter Officer ID">
+
+</div>
+
+<div class="input-group">
+
+<label>Password</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<span onclick="togglePassword()">
+
+Show
+
+</span>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button class="login-btn" onclick="login()">
+
+Login
+
+</button>
+
+<button class="clear-btn" onclick="clearForm()">
+
+Clear
+
+</button>
+
+</div>
+
+<p id="error">
+
+Invalid Officer ID or Password
+
+</p>
+
+</div>
+
+</div>
+<footer>
+
+<p>
+
+© 2026 Complaint Management Portal | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function openMenu(){
+
+document.getElementById("sidebar").style.width="260px";
+
+}
+
+function closeMenu(){
+
+document.getElementById("sidebar").style.width="0";
+
+}
+
+function togglePassword(){
+
+const password=document.getElementById("password");
+const toggle=document.querySelector(".password-box span");
+
+if(password.type==="password"){
+
+password.type="text";
+toggle.innerHTML="Hide";
+
+}
+else{
+
+password.type="password";
+toggle.innerHTML="Show";
+
+}
+
+}
+
+function clearForm(){
+
+document.getElementById("username").value="";
+document.getElementById("password").value="";
+document.getElementById("error").style.display="none";
+
+}
+
+function login(){
+
+const username=document.getElementById("username").value.trim();
+const password=document.getElementById("password").value.trim();
+
+if(username==="admin" && password==="1234"){
+
+alert("Login Successful!");
+
+window.location.href="dashboard.html";
+
+}
+else{
+
+document.getElementById("error").style.display="block";
+
+}
+
+}
+
+document.addEventListener("keypress",function(event){
+
+if(event.key==="Enter"){
+
+login();
+
+}
+
+});
+
+window.onclick=function(event){
+
+const sidebar=document.getElementById("sidebar");
+
+if(
+
+sidebar.style.width=="260px" &&
+!event.target.matches('.menu-btn') &&
+!sidebar.contains(event.target)
+
+){
+
+sidebar.style.width="0";
+
+}
+
+}
+
+</script>
+
 </body>
+
 </html>
